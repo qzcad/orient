@@ -1,3 +1,4 @@
+require('dotenv').config();
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -8,6 +9,7 @@ var db_lite = require('./database.js');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var usersMongoRouter = require('./routes/users_mongo');
 
 var app = express();
 
@@ -23,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/users_mongo', usersMongoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
