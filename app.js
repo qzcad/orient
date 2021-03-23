@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var db_lite = require('./database.js');
+var db_mongo = require('./database_mongo');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
